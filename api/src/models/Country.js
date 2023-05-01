@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('country', {
+  sequelize.define("Country", {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
@@ -10,9 +10,8 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
-    image: {
+    bandera: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,7 +28,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     area: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
     },
     poblacion: {
       type: DataTypes.INTEGER,

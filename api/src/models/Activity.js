@@ -1,28 +1,24 @@
-const { INTEGER } = require('sequelize');
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('country', {
+  sequelize.define("Activity", {
     id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV1,
+        autoIncrement: true,
     },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     dificultad: {
-        type: DataTypes.RANGE(INTEGER, 1,5),
-        allowNull: false,
+        type: DataTypes.ENUM('1', '2', '3', '4', '5'),
     },
     duracion:{
-        type: DataTypes.TIME,
-        allowNull: false,
+        type: DataTypes.STRING,
     },
     temporada:{
-        type: DataTypes.STRING,
-        defaultValue: {Verano : "verano", Otoño: "otoño", Invierno: "invierno", Primavera: "primavera"}
+        type: DataTypes.ENUM('1', '2', '3', '4', '5'),
     }
   },{
     timestamps: false,
